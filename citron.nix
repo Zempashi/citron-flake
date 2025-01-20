@@ -99,6 +99,8 @@ stdenv.mkDerivation(finalAttrs: {
   cmakeFlags = [
     # actually has a noticeable performance impact
     "-DCITRON_ENABLE_LTO=ON"
+    "-DCMAKE_C_FLAGS=-march=x86-64-v2"
+    "-DCMAKE_CXX_FLAGS=-march=x86-64-v2"
 
     # build with qt6
     "-DENABLE_QT6=ON"
@@ -122,9 +124,11 @@ stdenv.mkDerivation(finalAttrs: {
     "-DCITRON_USE_QT_MULTIMEDIA=ON"
     "-DCITRON_DISCORD_PRESENCE=ON"
 
+    "-DCITRON_TESTS=OFF"
+    "-DCITRON_USE_LLVM_DEMANGLE=OFF"
     # We dont want to bother upstream with potentially outdated compat reports
     "-DCITRON_ENABLE_COMPATIBILITY_REPORTING=OFF"
-    "-DENABLE_COMPATIBILITY_LIST_DOWNLOAD=OFF" # We provide this deterministically
+    "-DENABLE_COMPATIBILITY_LIST_DOWNLOAD=OFF"
   ];
 
   # Does some handrolled SIMD
