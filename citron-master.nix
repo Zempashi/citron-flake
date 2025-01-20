@@ -1,12 +1,12 @@
 { pkgs, nx_tzdb, ... }:
 let
-  version = "unstable-2025-01-18";
+  version = "unstable-2025-01-20";
   src = pkgs.fetchgit {
     fetchSubmodules = true;
     deepClone = true;
     url = "https://git.citron-emu.org/Citron/Citron";
-    rev = "d4d3061eb78fdba50201613271688a1dcd231ef4";
-    sha256 = "lQ5fHqbO/aT4VGmxTo4/YTm1JLGmQlihts6QUHUbJXo=";
+    rev = "d7dc87bbf3a9c515c96f7734df34b31810540c50";
+    sha256 = "jm3AINx+uSq6g5nSpT0kbagPrPFv2BOgRweNIhXU14o=";
   };
 in
 pkgs.qt6.callPackage ./citron.nix ({ inherit nx_tzdb version src; })
