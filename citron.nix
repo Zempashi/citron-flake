@@ -11,7 +11,7 @@
 , curl
 , discord-rpc
 #, ffmpeg-headless
-, fmt
+, fmt_11
 , glslang
 , libopus
 , libusb1
@@ -69,7 +69,7 @@ stdenv.mkDerivation(finalAttrs: {
     #ffmpeg-headless
     # end ffmpeg deps
 
-    fmt
+    fmt_11
     # intentionally omitted: gamemode - loaded dynamically at runtime
     # intentionally omitted: httplib - upstream requires an older version than what we have
     libopus
